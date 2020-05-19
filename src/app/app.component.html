@@ -1,0 +1,139 @@
+<div class="app">
+  <form [formGroup]="myForm" novalidate>
+  <section>
+    <div class="page">
+      <div class="inner">
+        <header class="header">
+          <div class="logo">
+            <img src="assets/indice.jpg" alt="">
+          </div>
+          <div class="title ">
+            <h3>TRANSMISIONES AUTOMATICAS</h3>
+            <h3>MORELOS</h3> <br>
+            <p>LIBERTAD #38 COL. MORELOS</p>
+            <p>C.P. 58030 MORELIA, MICH. TEL: 2746458</p><br>
+            
+          </div>
+          <div class="budget">
+            <table>
+              <tr>
+                <td id="budget">PRESUPUESTO</td>
+              </tr>
+
+              <tr>
+                <td id="_budg">
+                  <input type="number">
+                </td>
+              </tr>
+            </table>
+            <!-- <img src="assets/full.PNG" style="width:100%; margin-top:2mm"> -->
+            <h5 style="text-align: center;">38 AÑOS DE EXPERIENCIA</h5>
+          </div>
+        </header>
+        <section class="content">
+          <table id="tab1">
+            <tr>
+              <td>
+                <span class="line">Nombre del Cliente: </span>
+                <input id="date" type="text" class="left-aligned">
+              </td>
+            </tr>
+          </table>
+          <table id="tab3">
+            <tr>
+              <td>
+                <span class="line">Marca: </span>
+                <input id="name" type="text" class="left-aligned">
+              </td>
+              <td>
+                <span class="line">Tipo: </span>
+                <input id="unit" type="text" class="left-aligned">
+              </td>
+            </tr>
+          </table>
+          <table id="tab3">
+            <tr>
+              <td>
+                <span class="line">Modelo: </span>
+                <input id="adress" type="text" class="left-aligned">
+                <span class="line">Fecha: </span>
+                <input id="date" type="text" class="left-aligned" value={{fecha}}>
+              </td>
+            </tr>
+          </table>
+          <table id="tab2">
+            <tr>
+              <td id="city">
+                <span class="line">Ciudad: </span>
+                <input id="cit" type="text" class="left-aligned">
+              </td>
+              <td id="city">
+                <span class="line">RFC: </span>
+                <input id="rfc" type="text" class="left-aligned">
+              </td>
+            </tr>
+          </table>
+
+          <section class="section2" formArrayName="units">
+            <div class="table" id="main_table">
+              <div class="tr thead">
+                <div class="td">CANT.</div>
+                <div class="td">DESCRIPCION</div>
+                <div class="td">P.UNIT.</div>
+                <div class="td">IMPORTE</div>
+              </div>
+          <!--    <div *ngFor="let unit of myForm.controls.units.controls; let i=index" class="tr" [formGroupName]="i">-->
+              <div *ngFor="let unit of getControls(myForm, 'units'); let i=index" class="tr" [formGroupName]="i">
+               <!-- <div [formGroupName]="i">-->
+                  <div class="td"><input type="number" formControlName="qty" class="cantidad"></div>
+                  <div class="td"><input type="text" class="descripcion"></div>
+                  <div class="td"><input type="number" formControlName="price" class="punitario"></div>
+                  <div class="td"><input formControlName="subtotal" class="importe"></div>
+               <!-- </div>-->
+              </div>
+
+            </div>
+            <div class="table" id="warranty">
+              <div class="tr">
+                <div class="td" id="_warr"><span>TODA REPARACIÓN TIENE GARANTÍA POR 60 DIAS EN MANO DE OBRA Y EN
+                    REFACCIONES LA ESPECIFICADA POR EL FABRICANTE, SIEMPRE Y CUANDO NO MANIFIESTE MAL USO, NEGLIGENCIA O
+                    DESCUIDO.</span></div>
+                <div class="td">
+                  <label for="total">TOTAL $</label>
+                </div>
+                <div class="td">
+                  <input  class="_total" value="{{ total | currency:'USD':'symbol-narrow':'1.2-2'}}">
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section3">
+
+            <div>
+              <p id= "_subtitle"><b>CANTIDAD TOTAL CON LETRA</b></p>
+              <table id="_total_letter">
+                  <tr>
+                    <td>                      
+                      <input id="_number" type="text" class="left-aligned" value ="{{numero + ' pesos 00/100 MN'}}">
+                    </td>
+                  </tr>
+              </table>
+            </div>
+          </section>
+
+          <section id="_foot">
+            <span>
+              LIBERTAD #38 COL. MORELOS C.P. 58030 MORELIA, MICH. TEL: 2746458
+
+              
+            </span>
+          </section>
+        </section>
+        <div class="no-print" id="printBtn" onclick="window.print()">
+          <img src="assets/save.png" alt="" width="75" height="75">
+        </div>
+      </div>
+    </div>
+  </section>
+  </form>
+</div>
