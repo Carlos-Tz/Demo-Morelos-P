@@ -11,7 +11,8 @@
   --font: 'Open Sans', sans-serif;
   --font-size: 0.9em;
   --background: #fafafa;
-  --text-color: #4369aa;
+  /* --text-color: #4369aa; */
+  --text-color: rgba(31,28,119,1);
   --logo-width: 3.5cm;
   --input-text-color: #555;
 }
@@ -64,7 +65,7 @@ body {
     --font: 'Open Sans', sans-serif;
     --font-size: 0.9em;
     --background: #fafafa;
-    --text-color: #4369aa;
+    --text-color: rgba(31,28,119,1);
     --logo-width: 3.5cm;
     --input-text-color: #555;
     /*--primary-color: #BCDB68;*/

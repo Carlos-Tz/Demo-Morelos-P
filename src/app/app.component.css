@@ -106,23 +106,17 @@
     font-size: .8em;
     margin: 2mm 2mm;
   }
-  #date{
-    width: calc(100% - 5cm);
-  }
+  
   #name{
-    width: calc(100% - 2cm);
+    width: calc(100% - 4cm);
   }
-  #adress{
-    width: calc(100% - 2.2cm);
-  }
-  #rfc{
-    width: calc(100% - 1.3cm);
-  }
+  
   #cit{
     width: calc(100% - 1.7cm);
   }
-  #unit{
-    width: calc(100% - 1.7cm);
+  
+  .c2 {
+    width: 50%;
   }
   #main_table{
     background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url('../assets/indice.jpg');
